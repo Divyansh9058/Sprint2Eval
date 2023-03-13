@@ -8,6 +8,11 @@ const fs = require("fs")
 const app = express();
 app.use(express.json());
 
+userRouter.get("/",(req,res)=>{
+    res.send({msg:"Default Route"})
+})
+
+
 userRouter.post("/signup",async(req,res)=>{
 
     const {name,email,password,role} = req.body;
